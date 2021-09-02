@@ -103,4 +103,12 @@ $(document).ready(function () {
         $(".every_desktop_content_main_bar_line_tool_sticks").css("width", widthPercent);
     });
 
+    $(".form_content_form form input").focus(function() {
+        $(this).parent().addClass("focus");
+    });
+
+    $(".form_content_form form input").focusout(function() {
+        $(this).parent().removeClass("focus");
+    });
+
 });

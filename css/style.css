@@ -660,11 +660,13 @@ body.no_scroll {
     top: 0px;
     height: 100%;
     background-color: #CBA689;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
   }
   .home_content_desktop_top_left_feature_item_top {
     position: absolute;
     right: 0px;
-    top: -26px;
+    top: -24px;
   }
   .home_content_desktop_top_left_feature_item_bottom {
     position: absolute;
@@ -993,6 +995,8 @@ body.no_scroll {
   width: 30%;
   height: 2px;
   background-color: #263A32;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .every_content_bar_main span {
@@ -1147,6 +1151,8 @@ body.no_scroll {
   top: 0px;
   height: 2px;
   background-color: #263A32;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .every_desktop_content_main_slider {
@@ -1715,6 +1721,8 @@ body.no_scroll {
   width: 100%;
   height: 1px;
   background-color: #263A32;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .form_content_form form p span input {
@@ -1758,6 +1766,12 @@ body.no_scroll {
 
 .form_content_form form p span.half {
   width: calc(50% - 7.5px);
+}
+
+.form_content_form form p span.focus::before {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-color: #CBA689;
 }
 
 .form_content_form form .warning {

@@ -984,7 +984,7 @@ body.no_scroll {
 
 .reason_bar_prev .insert {
   position: absolute;
-  bottom: -10px;
+  bottom: -9px;
   left: -6px;
   width: 11px;
   height: 1px;
@@ -1224,7 +1224,7 @@ body.no_scroll {
 
 .every_content_bar_main_prev .insert {
   position: absolute;
-  bottom: -10px;
+  bottom: -9px;
   left: -6px;
   width: 11px;
   height: 1px;

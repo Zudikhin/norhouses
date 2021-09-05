@@ -120,6 +120,13 @@ button {
 button:focus {
   border: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+select {
+  color: #000;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 #000;
 }
 
 a {

@@ -143,9 +143,9 @@ $(document).ready(function () {
             $(".edit_images .two_three").addClass("active");
         } else if (currentValue == 'wood_three' && anotherValue == 'window_one') {
             $(".edit_images .three_one").addClass("active");
-        } else if (currentValue == 'wood_three' && anotherValue == 'wood_two') {
+        } else if (currentValue == 'wood_three' && anotherValue == 'window_two') {
             $(".edit_images .three_two").addClass("active");
-        } else if (currentValue == 'wood_three' && anotherValue == 'wood_three') {
+        } else if (currentValue == 'wood_three' && anotherValue == 'window_three') {
             $(".edit_images .three_three").addClass("active");
         }
         $(".edit_choice_wood").removeClass("active");

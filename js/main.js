@@ -111,4 +111,125 @@ $(document).ready(function () {
         $(this).parent().removeClass("focus");
     });
 
+    $(".edit_item_wood button").click(function() {
+        $(".edit").addClass("active");
+        $(".edit_choice_wood").addClass("active");
+        $(".edit_choice_window").removeClass("active");
+    });
+
+    $(".edit_item_window button").click(function() {
+        $(".edit").addClass("active");
+        $(".edit_choice_window").addClass("active");
+        $(".edit_choice_wood").removeClass("active");
+    });
+
+    $(".edit_choice_wood_list input").click(function() {
+        $(".edit_choice_wood_list input").prop('checked', false);
+        $(this).prop('checked', true);
+        var currentValue = $(this).val();
+        var anotherValue = $(".edit_choice_window_list input:checked").val();
+        $(".edit_images_item").removeClass("active");
+        if(currentValue == 'wood_one' && anotherValue == 'window_one') {
+            $(".edit_images .one_one").addClass("active");
+        } else if (currentValue == 'wood_one' && anotherValue == 'window_two') {
+            $(".edit_images .one_two").addClass("active");
+        } else if (currentValue == 'wood_one' && anotherValue == 'window_three') {
+            $(".edit_images .one_three").addClass("active");
+        } else if (currentValue == 'wood_two' && anotherValue == 'window_one') {
+            $(".edit_images .two_one").addClass("active");
+        } else if (currentValue == 'wood_two' && anotherValue == 'window_two') {
+            $(".edit_images .two_two").addClass("active");
+        } else if (currentValue == 'wood_two' && anotherValue == 'window_three') {
+            $(".edit_images .two_three").addClass("active");
+        } else if (currentValue == 'wood_three' && anotherValue == 'window_one') {
+            $(".edit_images .three_one").addClass("active");
+        } else if (currentValue == 'wood_three' && anotherValue == 'wood_two') {
+            $(".edit_images .three_two").addClass("active");
+        } else if (currentValue == 'wood_three' && anotherValue == 'wood_three') {
+            $(".edit_images .three_three").addClass("active");
+        }
+        $(".edit_choice_wood").removeClass("active");
+        $(".edit").removeClass("active");
+    });
+
+
+    $(".edit_choice_window_list input").click(function() {
+        $(".edit_choice_window_list input").prop('checked', false);
+        $(this).prop('checked', true);
+        var currentValue = $(this).val();
+        var anotherValue = $(".edit_choice_wood_list input:checked").val();
+        $(".edit_images_item").removeClass("active");
+        if(anotherValue == 'wood_one' && currentValue == 'window_one') {
+            $(".edit_images .one_one").addClass("active");
+        } else if (anotherValue == 'wood_one' && currentValue == 'window_two') {
+            $(".edit_images .one_two").addClass("active");
+        } else if (anotherValue == 'wood_one' && currentValue == 'window_three') {
+            $(".edit_images .one_three").addClass("active");
+        } else if (anotherValue == 'wood_two' && currentValue == 'window_one') {
+            $(".edit_images .two_one").addClass("active");
+        } else if (anotherValue == 'wood_two' && currentValue == 'window_two') {
+            $(".edit_images .two_two").addClass("active");
+        } else if (anotherValue == 'wood_two' && currentValue == 'window_three') {
+            $(".edit_images .two_three").addClass("active");
+        } else if (anotherValue == 'wood_three' && currentValue == 'window_one') {
+            $(".edit_images .three_one").addClass("active");
+        } else if (anotherValue == 'wood_three' && currentValue == 'window_two') {
+            $(".edit_images .three_two").addClass("active");
+        } else if (anotherValue == 'wood_three' && currentValue == 'window_three') {
+            $(".edit_images .three_three").addClass("active");
+        }
+        $(".edit_choice_window").removeClass("active");
+        $(".edit").removeClass("active");
+    });
+
+    $('.come_slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        centerMode: true,
+        nextArrow: $('.come_btn'),
+        variableWidth: true
+    });
+
+    $(".come_slider").on("afterChange", function(event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        var lengthSlider = $(".come_slider .slick-dots li").length;
+        var widthPercent = (i*100)/lengthSlider;
+        widthPercent = widthPercent + '%';
+        $(".come_bar_tool").css("width", widthPercent);
+    });
+
+    var defaultWidthCome = 100/$(".come_slider .slick-dots li").length;
+    defaultWidthCome = defaultWidthCome + '%';
+    $(".come_bar_tool").css("width", defaultWidthCome);
+
+
+    $(".come_slider .come_slider_item").mousemove(function(e){
+        var parentOffset = $(this).offset(); 
+        var relX = e.pageX - parentOffset.left;
+        var relY = e.pageY - parentOffset.top;
+        $(".come_slider_item_cursor").css("top", relY);
+        $(".come_slider_item_cursor").css("left", relX);
+     });
+
+     $(".drawings_title select").select2();
+
+     $(".drawings_title select").on('change', function() {
+        var currentVal = this.value;
+        $(".drawings_content_item").removeClass("active");
+        $(".drawings_content").find(`[data-target='${currentVal}']`).addClass("active");
+     });
+
+     $('.meet_slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        prevArrow: $('.meet_prev'),
+        nextArrow: $('.meet_next'),
+        cssEase: 'linear'
+    });
+
 });

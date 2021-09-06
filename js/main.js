@@ -232,4 +232,17 @@ $(document).ready(function () {
         cssEase: 'linear'
     });
 
+    $(".husen_content_hero_item_btn").click(function() {
+        $(".husen_content_hero_item").removeClass("active");
+        $(this).parent().toggleClass("active");
+    });
+
+    $(document).click(function(e) {
+    var container = $(".husen_content_hero_item");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $(".husen_content_hero_item").removeClass("active");
+    }
+});
+
 });

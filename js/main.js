@@ -1,6 +1,8 @@
 $(document).ready(function () {
     "use strict";
 
+    init();
+
     $(".header_content_btn").click(function() {
         $(this).toggleClass("active");
         $(".header_dropdown").toggleClass("active");
@@ -185,7 +187,7 @@ $(document).ready(function () {
     $('.come_slider').slick({
         dots: true,
         infinite: true,
-        speed: 300,
+        speed: 1000,
         slidesToScroll: 1,
         slidesToShow: 1,
         centerMode: true,
@@ -194,11 +196,10 @@ $(document).ready(function () {
     });
 
     $(".come_slider").on("afterChange", function(event, slick, currentSlide, nextSlide) {
-        var i = (currentSlide ? currentSlide : 0) + 1;
         var lengthSlider = $(".come_slider .slick-dots li").length;
-        var widthPercent = (i*100)/lengthSlider;
+        var widthPercent = (currentSlide*100)/lengthSlider;
         widthPercent = widthPercent + '%';
-        $(".come_bar_tool").css("width", widthPercent);
+        $(".come_bar_tool").css("left", widthPercent);
     });
 
     var defaultWidthCome = 100/$(".come_slider .slick-dots li").length;
@@ -238,11 +239,95 @@ $(document).ready(function () {
     });
 
     $(document).click(function(e) {
-    var container = $(".husen_content_hero_item");
-    // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-        $(".husen_content_hero_item").removeClass("active");
+        var container = $(".husen_content_hero_item");
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            $(".husen_content_hero_item").removeClass("active");
+        }
+    });
+
+    
+
+    if ($(window).width() > 1199 ) {
+        $(".come_slider_item").click(function() {
+            $(this).toggleClass("active");
+        });
     }
-});
+
+    $(".order_catalog_content_main input").focus(function() {
+        $(this).addClass("focus");
+    });
+
+    $(".order_catalog_content_main input").focusout(function() {
+        $(this).removeClass("focus");
+    });
+
+    $(".optional_catalog_content_main input").focus(function() {
+        $(this).addClass("focus");
+    });
+
+    $(".optional_catalog_content_main input").focusout(function() {
+        $(this).removeClass("focus");
+    });
+
+
+
+    $(".optional_catalog_content_design input").focus(function() {
+        $(this).addClass("focus");
+    });
+
+    $(".optional_catalog_content_design input").focusout(function() {
+        $(this).removeClass("focus");
+    });
+
+    $(document).on('change','#optionalChoice' , function() { 
+        var text = this.files[0].name;
+        $("#val").text(text);
+    });
+
+
+    $(".order_catalog_content_plot input").click(function() {
+        $(".order_catalog_content_plot input").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    $(".optional_catalog_content_building input").click(function() {
+        $(".optional_catalog_content_building input").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    $(".optional_catalog_content_design_checkboxes input").click(function() {
+        $(".optional_catalog_content_design_checkboxes input").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    $(".optional_catalog_content_type input").click(function() {
+        $(".optional_catalog_content_type input").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    function init() {
+        $(".drawings_title select").select2({
+          width: "100%",
+          allowClear: false
+        }).on('select2:open', function(e) {
+          $('.select2-dropdown').hide();
+          setTimeout(function() {
+            jQuery('.select2-dropdown').slideDown(500);
+          });
+        }).on('select2:closing', function(e) {
+          e.preventDefault();
+          setTimeout(function() {
+            jQuery('.select2-dropdown').slideUp(500, function() {
+              close();
+            });
+          }, 0);
+        });
+      }
+      
+      function close() {
+        $(".drawings_title select").select2('destroy');
+        init();
+    }
 
 });

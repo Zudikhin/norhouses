@@ -116,7 +116,11 @@
     <div class="big_image" style="background: url(img/big_image/1.jpg); background-position: center; background-size: cover;"></div>
 
     <section class="welcome">
-      <div class="welcome_frame"></div>
+      <div class="welcome_frame">
+        <div class="welcome_frame_top"></div>
+        <div class="welcome_frame_right"></div>
+        <div class="welcome_frame_bottom"></div>
+      </div>
       <div class="container">
         <div class="welcome_content">
           <div class="welcome_content_left">
@@ -769,5 +773,21 @@
     <script src="js/slick.min.js"></script>
     <script src="js/select2.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      var offset = $(".welcome_content_left_img").offset().top;
+      var height = $(".welcome_content_left_img").height();
+      var resultOffset = offset - height;
+
+      $(window).scroll(function() {
+
+        if($(this).scrollTop() >= resultOffset) {
+          $(".welcome_frame").addClass("active");
+        }
+
+      });
+
+    </script>
+
   </body>
 </html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <meta name="author" content="Yuriy Zudikhin" />
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="container">
+        <div class="header_content">
+          <a class="header_content_logo" href="/">
+            <img src="img/header/logo.svg" alt="">
+          </a>
+          <div class="header_content_list">
+            <ul>
+              <li>
+                <a href="#">Bestil katalog</a>
+              </li>
+              <li>
+                <a href="#">Den grønne profil</a>
+              </li>
+              <li>
+                <a href="#">Om os</a>
+              </li>
+              <li>
+                <a href="#">Kontakt os</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header_content_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="front front_exp" style="background: url(img/order_catalog/1.png); background-position: center; background-size: cover;">
+      <div class="container">
+        <div class="front_content">
+
+          <div class="front_content_text">
+            <h1>Bestil uforpligtende tilbud</h1>
+            <p>Har I samlet inspiration til at tage det næste skridt, og få et uforpligtende tilbud?</p>
+            <p>Få et overblik priserne på jeres kommende drømmesommerhus, og lad os rådgive jer fra idé til virkelighed </p>
+          </div>
+                   
+          <div class="front_content_links">
+
+            <div class="front_content_links_list">
+
+              <a href="#" class="front_content_links_list_item">
+                <span>01</span>
+                <h5>Forside</h5>
+              </a>
+  
+              <a href="#" class="front_content_links_list_item">
+                <span>02</span>
+                <h5>Sommerhustyper</h5>
+              </a>
+  
+              <a href="#" class="front_content_links_list_item">
+                <span>03</span>
+                <h5>Fra sommerhusdrømme Til drømmesommerhus</h5>
+              </a>
+  
+              <a href="#" class="front_content_links_list_item">
+                <span>04</span>
+                <h5>Tilvalg til sommerhuset </h5>
+              </a>
+  
+              <a href="#" class="front_content_links_list_item">
+                <span>05</span>
+                <h5>Oplev Husene</h5>
+              </a>
+
+            </div>
+
+          </div>
+          
+
+        </div> 
+      </div>
+    </section>
+
+    <section class="optional_catalog">
+      <div class="container">
+        <div class="optional_catalog_content">
+          <form action="">
+            <p>
+              <div class="optional_catalog_content_main">
+                <span>
+                  <input type="text" placeholder="Fornavn">
+                </span>
+                <span>
+                  <input type="text" placeholder="Efternavn">
+                </span>
+                <span class="half">
+                  <input type="text" placeholder="Skriv e-mail">
+                </span>
+                <span class="half">
+                  <input type="text" placeholder="Bekræft e-mail">
+                </span>
+                <span>
+                  <input type="text" placeholder="Telefonnummer">
+                </span>
+                <span>
+                  <input type="text" placeholder="Adresse">
+                </span>
+                <span class="half">
+                  <input type="text" placeholder="By">
+                </span>
+                <span class="half">
+                  <input type="text" placeholder="Postnr.">
+                </span>
+              </div>
+
+              <div class="optional_catalog_content_building">
+                <h4>Har I en byggegrund</h4>
+
+                <label for="">
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                  <span class="text">Ja, vi har en byggegrund</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Nej, vi har ikke en byggegrund</span>
+                </label>
+
+              </div>
+
+              <div class="optional_catalog_content_design">
+                <h4>Vi er interesseret i et hus fra designlinjen</h4>
+
+                <div class="optional_catalog_content_design_checkboxes">
+
+                  <label for="">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    <span class="text">Vinkelhuset</span>
+                  </label>
+  
+                  <label for="">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <span class="text">Længehuset</span>
+                  </label>
+
+                </div>
+                
+                <input type="text" placeholder="Model">
+
+              </div>
+
+              <div class="optional_catalog_content_choice">
+                <h4>Upload evt. tegning med egne ideér og ønsker her</h4>
+                <label for="">
+                  <input id="optionalChoice" name="myFile" type="file">
+                  <div id='button'>
+                    <span>Choose file</span>
+                  </div>
+                  <div id='val'>No file chosen</div>
+                </label>
+                  
+              </div>
+
+              <div class="optional_catalog_content_type">
+                <h4>Hvilken byggeform er I interesserede i:</h4>
+
+                <label for="">
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                  <span class="text">Nøglefærdigt</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Byggesæt til medbyg</span>
+                </label>
+
+              </div>
+
+              <div class="optional_catalog_content_variant">
+                <h4>Vi ønsker følgende tilvalg</h4>
+
+                <label for="">
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                  <span class="text">Gæstehus 25</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Gæstehus 36</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Garage</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Redskabsskue</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Vi ønsker ikke at få beregnet en økonomiplan</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Tilmeld mig nor:houses nyhedsbrev</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Overdækket terrasse</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Sauna</span>
+                </label>
+
+                <label for="">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Andet</span>
+                </label>
+
+              </div>
+
+              <div class="optional_catalog_content_submit">
+                <input type="submit" value="send">
+                <img src="img/order_catalog/arrow.svg" alt="">
+                <svg>
+                  <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                </svg>
+              </div>
+
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer footer-order">
+      <div class="container">
+        <div class="footer_content">
+          <div class="footer_content_mobile">
+            <div class="footer_content_mobile_top">
+              <a class="footer_content_mobile_top_logo" href="/">
+                <img src="img/footer/logo_mob.svg" alt="">
+              </a>
+              <div class="footer_content_mobile_top_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="footer_content_mobile_mid">
+              <div class="footer_content_mobile_mid_left">
+                <h5>KONTAKT</h5>
+                <ul>
+                  <li>
+                    <a href="tel:+45 70 70 72 48">+45 70 70 72 48</a>
+                  </li>
+                  <li>
+                    <a href="mailto:info@norhouses.dk">info@norhouses.dk</a>
+                  </li>
+                  <li>
+                    <a href="#">Bjarkesvej 3.  DK 3480 Allerød</a>
+                  </li>
+                  <li>
+                    <a href="#">CVR 34226574</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer_content_mobile_mid_right">
+                <h5>FØLG OS</h5>
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="img/footer/instagram.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/footer/facebook.svg" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="img/footer/linkedin.svg" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer_content_mobile_copyright">
+              <p>Copyright © nor:houses 2021</p>
+            </div>
+          </div>
+          <div class="footer_content_desktop">
+
+            <a href="#" class="footer_content_desktop_logo">
+              <img src="img/footer/logo_big.svg" alt="">
+            </a>
+            
+            <div class="footer_content_desktop_mid">
+              <div class="footer_content_desktop_mid_first">
+                <h5>SOMMERHUSTYPER</h5>
+                <ul>
+                  <li>
+                    <a href="#">Vinkelhuset</a>
+                  </li>
+                  <li>
+                    <a href="#">Længeuset</a>
+                  </li>
+                  <li>
+                    <a href="#">Tilvalg til
+                      sommerhuset</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer_content_desktop_mid_second">
+                <h5>PROCESSEN</h5>
+                <ul>
+                  <li>
+                    <a href="#">Sådan bygger vi</a>
+                  </li>
+                  <li>
+                    <a href="#">Oplev husene</a>
+                  </li>
+                  <li>
+                    <a href="#">Bestil katalog</a>
+                  </li>
+                  <li>
+                    <a href="#">Cookie- og privatpolitik</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer_content_desktop_mid_three">
+                <h5>KONTAKT</h5>
+                <ul>
+                  <li>
+                    <a href="tel:+45 70 70 72 48">+45 70 70 72 48</a>
+                  </li>
+                  <li>
+                    <a href="mailto:info@norhouses.dk">info@norhouses.dk</a>
+                  </li>
+                  <li>
+                    <a href="#">Bjarkesvej 3.  DK 3480 Allerød</a>
+                  </li>
+                  <li>
+                    <a href="#">CVR 34226574</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer_content_desktop_social">
+              <h5>FØLG OS</h5>
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="img/footer/instagram.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/footer/facebook.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="img/footer/linkedin.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="footer_content_desktop_copyright">
+            <p>Copyright © nor:houses 2021</p>
+          </div>
+        </div>
+        <div class="footer_dropdown">
+          <div class="footer_dropdown_left">
+            <h5>SOMMERHUSTYPER</h5>
+            <ul>
+              <li>
+                <a href="#">Vinkelhuset</a>
+              </li>
+              <li>
+                <a href="#">Længeuset</a>
+              </li>
+              <li>
+                <a href="#">Tilvalg til
+                  sommerhuset</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer_dropdown_right">
+            <h5>PROCESSEN</h5>
+            <ul>
+              <li>
+                <a href="#">Sådan bygger vi</a>
+              </li>
+              <li>
+                <a href="#">Oplev husene</a>
+              </li>
+              <li>
+                <a href="#">Bestil katalog</a>
+              </li>
+              <li>
+                <a href="#">Cookie- og privatpolitik</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="header_dropdown">
+      <div class="header_dropdown_first_list">
+        <ul>
+          <li class="active">
+            <a href="#">Forside</a>
+          </li>
+          <li>
+            <a href="#">Sommerhustyper</a>
+          </li>
+          <li>
+            <a href="#">Fra sommerhusdrømme Til drømmsommerhus </a>
+          </li>
+          <li>
+            <a href="#">Tilvalg til sommerhuset </a>
+          </li>
+          <li>
+            <a href="#">Oplev vores univers </a>
+          </li>
+        </ul>
+      </div>
+      <div class="header_dropdown_second_list">
+        <ul>
+          <li>
+            <a href="#">Bestil katalog</a>
+          </li>
+          <li>
+            <a href="#">Den grønne profil</a>
+          </li>
+          <li>
+            <a href="#">Om os</a>
+          </li>
+          <li>
+            <a href="#">Kontakt os</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header_dropdown_social">
+        <h5>FØLG OS</h5>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="img/header/instagram.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/header/facebook.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/header/linkedin.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

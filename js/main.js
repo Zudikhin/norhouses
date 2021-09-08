@@ -270,13 +270,27 @@ $(document).ready(function () {
         $(this).removeClass("focus");
     });
 
-
-
     $(".optional_catalog_content_design input").focus(function() {
         $(this).addClass("focus");
     });
 
     $(".optional_catalog_content_design input").focusout(function() {
+        $(this).removeClass("focus");
+    });
+
+    $(".contact_us_block_form input").focus(function() {
+        $(this).addClass("focus");
+    });
+
+    $(".contact_us_block_form input").focusout(function() {
+        $(this).removeClass("focus");
+    });
+
+    $(".contact_us_block_form textarea").focus(function() {
+        $(this).addClass("focus");
+    });
+
+    $(".contact_us_block_form textarea").focusout(function() {
         $(this).removeClass("focus");
     });
 

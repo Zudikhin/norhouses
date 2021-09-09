@@ -8161,6 +8161,139 @@ body.no_scroll {
   }
 }
 
+.video video {
+  width: 100%;
+}
+
+.certificates {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFF8F8;
+}
+
+.certificates:after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 51px;
+  width: 52%;
+  height: 46px;
+  background-color: #ECE1D8;
+}
+
+.certificates_title {
+  position: relative;
+  z-index: 2;
+}
+
+.certificates_title h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #263A32;
+}
+
+.certificates_title p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 28px;
+  color: #263A32;
+  margin-top: 27px;
+}
+
+.certificates_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 6px;
+}
+
+.certificates_list_item {
+  margin-top: 36px;
+}
+
+.certificates_list_item_text {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
+}
+
+.certificates_list_item_text::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -4px;
+  width: 5px;
+  height: 32px;
+  background-color: #ECE1D8;
+}
+
+.certificates_list_item_text p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(112, 100, 88, 0.9);
+}
+
+.certificates_list_item img {
+  width: 100%;
+  margin-top: 24px;
+}
+
+@media (min-width: 1200px) {
+  .certificates {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+  .certificates:after {
+    height: 196px;
+    top: 108px;
+  }
+  .certificates_title h2 {
+    font-size: 53px;
+    line-height: 65px;
+  }
+  .certificates_title p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+  }
+  .certificates_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 60px;
+  }
+  .certificates_list_item {
+    width: 370px;
+    margin-top: 84px;
+  }
+  .certificates_list_item_text p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 .footer {
   background-color: #1E2D27;
   margin-top: 62px;

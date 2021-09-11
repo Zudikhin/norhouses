@@ -410,4 +410,55 @@ $(document).ready(function () {
         $('.house_two_content_main_slider_block').slick('slickGoTo', dataId);
     });
 
+    $('.find_content_slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        prevArrow: $('.find_content_bar_main_prev'),
+        nextArrow: $('.find_content_bar_main_next'),
+        cssEase: 'linear'
+    });
+
+    $(".find_content_next").click(function() {
+        $(".find_content_slider").slick('slickNext');
+    });
+
+    $(".find_content_slider").on("afterChange", function(event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        var lengthSlider = $(".find_content_slider .slick-dots li").length;
+        var widthPercent = (i*100)/lengthSlider;
+        widthPercent = widthPercent + '%';
+        $(".find_content_bar_count span").text("/ 0" + i);
+        var textTitle = $(".find_content_slider .slick-current").find("h5").text();
+        $(".find_content_bar_main span").text(textTitle);
+        $(".find_content_bar_main_line_sticks").css("width", widthPercent);
+    });
+
+
+    $('.find_desktop_content_main_slider').slick({
+        dots: true,
+        infinite: true,
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        speed: 500,
+        prevArrow: $('.find_desktop_content_main_bar_line_prev'),
+        nextArrow: $('.find_desktop_content_main_bar_line_next'),
+        cssEase: 'linear'
+    });
+
+    $(".find_desktop_content_main_next").click(function() {
+        $(".find_desktop_content_main_slider").slick('slickNext');
+    });
+
+    $(".find_desktop_content_main_slider").on("afterChange", function(event, slick, currentSlide, nextSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        var lengthSlider = $(".find_desktop_content_main_slider .slick-dots li").length;
+        var widthPercent = (i*100)/lengthSlider;
+        widthPercent = widthPercent + '%';
+        $(".find_desktop_content_main_bar_count span").text("/ 0" + i);
+        var textTitle = $(".find_desktop_content_main_slider .slick-current").find("h5").text();
+        $(".find_desktop_content_main_bar p").text(textTitle);
+        $(".find_desktop_content_main_bar_line_tool_sticks").css("width", widthPercent);
+    });
+
 });

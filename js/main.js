@@ -344,4 +344,70 @@ $(document).ready(function () {
         init();
     }
 
+    $('.house_one_content_main_slider_block').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: false,
+        cssEase: 'linear'
+    });
+
+    $('.house_two_content_main_slider_block').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: false,
+        cssEase: 'linear'
+    });
+
+    $('.modal_house_one_slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        prevArrow: $('.modal_house_one_prev'),
+        nextArrow: $('.modal_house_one_next'),
+        cssEase: 'linear',
+        fade: true
+    });
+
+    $('.modal_house_two_slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        prevArrow: $('.modal_house_two_prev'),
+        nextArrow: $('.modal_house_two_next'),
+        cssEase: 'linear',
+        fade: true
+    });
+
+    $(".house_one_content_main_slider_open").click(function() {
+        $(".modal_house_one").addClass("active");
+        $("body").addClass("no_scroll");
+        var dataId = $('.house_one_content_main_slider_block .slick-current').attr("data-slick-index");   
+        $('.modal_house_one_slider').slick('slickGoTo', dataId);
+    });
+
+    $(".modal_house_one_back").click(function() {
+        $(".modal_house_one").removeClass("active");
+        $("body").removeClass("no_scroll");
+        var dataId = $('.modal_house_one_slider .slick-current').attr("data-slick-index");   
+        $('.house_one_content_main_slider_block').slick('slickGoTo', dataId);
+    });
+
+    $(".house_two_content_main_slider_open").click(function() {
+        $(".modal_house_two").addClass("active");
+        $("body").addClass("no_scroll");
+        var dataId = $('.house_two_content_main_slider_block .slick-current').attr("data-slick-index");   
+        $('.modal_house_two_slider').slick('slickGoTo', dataId);
+    });
+
+    $(".modal_house_two_back").click(function() {
+        $(".modal_house_two").removeClass("active");
+        $("body").removeClass("no_scroll");
+        var dataId = $('.modal_house_two_slider .slick-current').attr("data-slick-index");   
+        $('.house_two_content_main_slider_block').slick('slickGoTo', dataId);
+    });
+
 });

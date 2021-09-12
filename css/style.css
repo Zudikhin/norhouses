@@ -10510,16 +10510,9 @@ body.no_scroll {
 
 .search_content {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 110px;
 }
 
 .search_content h1 {
@@ -10530,7 +10523,7 @@ body.no_scroll {
   color: #FFFFFF;
 }
 
-.search_content p {
+.search_content_text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -10540,6 +10533,539 @@ body.no_scroll {
 }
 
 .search_content_bottom {
+  display: none;
+}
+
+.search_content_calculator {
+  background: rgba(38, 58, 50, 0.5);
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px 16px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.search_content_calculator_drop {
+  position: relative;
+  cursor: pointer;
+}
+
+.search_content_calculator_drop h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #C4C4C4;
+}
+
+.search_content_calculator_drop p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+
+.search_content_calculator_drop img {
+  position: absolute;
+  left: 130px;
+  top: 14px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop_choice {
+  background-color: #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  width: 100%;
+  z-index: 6;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.15s ease-out;
+  transition: max-height 0.15s ease-out;
+}
+
+.search_content_calculator_drop_choice label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 48px;
+  margin-top: 19px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.search_content_calculator_drop_choice label input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search_content_calculator_drop_choice label .checkmark {
+  position: absolute;
+  left: 0px;
+  top: -4px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #7D8681;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  margin-top: 0px;
+}
+
+.search_content_calculator_drop_choice label .checkmark:after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  background-color: #263A32;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop_choice label .text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #7D8681;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  margin-top: 0px;
+}
+
+.search_content_calculator_drop_choice label input:checked ~ .checkmark {
+  border: 1px solid #263A32;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop_choice label input:checked ~ .checkmark:after {
+  opacity: 1;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop_choice label input:checked ~ .text {
+  color: #263A32;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop_choice label:last-child {
+  margin-bottom: 20px;
+}
+
+.search_content_calculator_drop.active img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.search_content_calculator_drop.active .search_content_calculator_drop_choice {
+  max-height: 136px;
+  -webkit-transition: max-height 0.25s ease-in;
+  transition: max-height 0.25s ease-in;
+}
+
+.search_content_calculator_space {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.search_content_calculator_space_title {
+  width: 100%;
+}
+
+.search_content_calculator_space_title h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #C4C4C4;
+}
+
+.search_content_calculator_space_bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.search_content_calculator_space_bar_left {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #CBA689;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+}
+
+.search_content_calculator_space_bar_left:after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(236, 225, 216, 0.5);
+}
+
+.search_content_calculator_space_bar_right {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ECE1D8;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 2;
+}
+
+.search_content_calculator_space_bar_right:after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(236, 225, 216, 0.5);
+}
+
+.search_content_calculator_space_bar:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  z-index: 0;
+  background-color: #ECE1D8;
+}
+
+.search_content_calculator_space_bar input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: transparent;
+  height: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+.search_content_calculator_space_bar input[type=range]:focus {
+  outline: none;
+}
+
+.search_content_calculator_space_bar input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+}
+
+.search_content_calculator_space_bar input[type=range]::-webkit-slider-thumb {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ECE1D8;
+  cursor: pointer;
+  margin-top: -1.8px;
+  margin-left: 0px;
+  -webkit-appearance: none;
+}
+
+.search_content_calculator_space_bar input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.search_content_calculator_space_bar input[type=range]::-moz-range-thumb {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ECE1D8;
+  cursor: pointer;
+}
+
+.search_content_calculator_space span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  position: absolute;
+}
+
+.search_content_calculator_space_min {
+  left: 0px;
+  bottom: 18px;
+}
+
+.search_content_calculator_space_max {
+  right: 0px;
+  bottom: 18px;
+}
+
+.search_content_calculator_price {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.search_content_calculator_price_title {
+  width: 100%;
+}
+
+.search_content_calculator_price_title h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #C4C4C4;
+}
+
+.search_content_calculator_price_bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.search_content_calculator_price_bar_left {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #CBA689;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+}
+
+.search_content_calculator_price_bar_left:after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(236, 225, 216, 0.5);
+}
+
+.search_content_calculator_price_bar_right {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ECE1D8;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 2;
+}
+
+.search_content_calculator_price_bar_right:after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid rgba(236, 225, 216, 0.5);
+}
+
+.search_content_calculator_price_bar:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  z-index: 0;
+  background-color: #ECE1D8;
+}
+
+.search_content_calculator_price_bar input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: transparent;
+  height: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+.search_content_calculator_price_bar input[type=range]:focus {
+  outline: none;
+}
+
+.search_content_calculator_price_bar input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+}
+
+.search_content_calculator_price_bar input[type=range]::-webkit-slider-thumb {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ECE1D8;
+  cursor: pointer;
+  margin-top: -1.8px;
+  margin-left: 0px;
+  -webkit-appearance: none;
+}
+
+.search_content_calculator_price_bar input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.search_content_calculator_price_bar input[type=range]::-moz-range-thumb {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ECE1D8;
+  cursor: pointer;
+}
+
+.search_content_calculator_price span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  position: absolute;
+}
+
+.search_content_calculator_price_min {
+  left: 0px;
+  bottom: 18px;
+}
+
+.search_content_calculator_price_max {
+  right: 0px;
+  bottom: 18px;
+}
+
+.search_content_calculator_search {
+  width: 85px;
+  height: 38px;
+  border: 1px solid #CBA689;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 43px;
+}
+
+.search_content_calculator_search svg {
   display: none;
 }
 
@@ -10557,7 +11083,7 @@ body.no_scroll {
     font-size: 90px;
     line-height: 110px;
   }
-  .search_content p {
+  .search_content_text {
     font-size: 24px;
     line-height: 29px;
     margin-top: 0px;
@@ -10636,6 +11162,108 @@ body.no_scroll {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background: rgba(203, 166, 137, 0.5);
+  }
+  .search_content_calculator {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 30px;
+    margin-top: 30px;
+  }
+  .search_content_calculator_drop {
+    width: 214px;
+  }
+  .search_content_calculator_drop h5 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search_content_calculator_drop p {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 5px;
+  }
+  .search_content_calculator_drop img {
+    left: 199px;
+    top: 24px;
+  }
+  .search_content_calculator_drop_choice {
+    top: 60px;
+  }
+  .search_content_calculator_space {
+    width: 260px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 0px;
+  }
+  .search_content_calculator_space_title {
+    margin-bottom: 5px;
+  }
+  .search_content_calculator_space_title h5 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search_content_calculator_space span {
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search_content_calculator_space_min {
+    bottom: 0px;
+    width: 55px;
+  }
+  .search_content_calculator_space_max {
+    bottom: 0px;
+    width: 55px;
+  }
+  .search_content_calculator_space_bar {
+    width: 127px;
+    margin-top: 0px;
+  }
+  .search_content_calculator_price {
+    width: 394px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 0px;
+  }
+  .search_content_calculator_price_title {
+    margin-bottom: 5px;
+  }
+  .search_content_calculator_price_title h5 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search_content_calculator_price span {
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .search_content_calculator_price_min {
+    bottom: 0px;
+    width: 120px;
+  }
+  .search_content_calculator_price_max {
+    bottom: 0px;
+    width: 120px;
+  }
+  .search_content_calculator_price_bar {
+    width: 130px;
+    margin-top: 0px;
+  }
+  .search_content_calculator_search {
+    margin: 0px;
   }
 }
 
@@ -11320,6 +11948,207 @@ body.no_scroll {
   }
   .wooden_cabins_content_list_item-right .wooden_cabins_content_list_item_img {
     right: -95px;
+  }
+}
+
+.catalog {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFF8F8;
+  padding-top: 32px;
+}
+
+.catalog_content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.catalog_content_item {
+  background-color: #FFFFFF;
+  margin-top: 32px;
+}
+
+.catalog_content_item_slider {
+  position: relative;
+}
+
+.catalog_content_item_slider_prev {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.catalog_content_item_slider_next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.catalog_content_item_slider_list_img {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.catalog_content_item_slider_list_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.catalog_content_item_text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px 15px 0px 15px;
+}
+
+.catalog_content_item_text_title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #263A32;
+  margin-top: 32px;
+}
+
+.catalog_content_item_text_description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #263A32;
+  margin-top: 15px;
+}
+
+.catalog_content_item_text_list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 33px;
+}
+
+.catalog_content_item_text_list_item {
+  position: relative;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
+  margin-bottom: 46px;
+}
+
+.catalog_content_item_text_list_item:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 5px;
+  height: 53px;
+  background-color: #ECE1D8;
+}
+
+.catalog_content_item_text_list_item span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 24px;
+  color: rgba(112, 100, 88, 0.9);
+}
+
+.catalog_content_item_text_list_item p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #263A32;
+  margin-top: 3px;
+}
+
+.catalog_content_item:first-child {
+  margin-top: 0px;
+}
+
+@media (min-width: 768px) {
+  .catalog_content_item_slider_list_img {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    padding-top: 100px;
+  }
+  .catalog_content_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 50px;
+  }
+  .catalog_content_item_slider_list {
+    width: 393px;
+  }
+  .catalog_content_item_slider_list_img {
+    width: 393px;
+    height: 408px;
+  }
+  .catalog_content_item_text {
+    padding: 0px;
+    padding-right: 60px;
+    margin-left: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .catalog_content_item_text_title {
+    font-size: 42px;
+    line-height: 51px;
+    margin-top: 0px;
+  }
+  .catalog_content_item_text_description {
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 33px;
+  }
+  .catalog_content_item_text_list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 60px;
+  }
+  .catalog_content_item_text_list_item {
+    width: auto;
+  }
+  .catalog_content_item_text_list_item span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .catalog_content_item_text_list_item p {
+    font-size: 22px;
+    line-height: 25px;
+    margin-top: 3px;
   }
 }
 

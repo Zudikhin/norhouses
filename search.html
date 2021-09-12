@@ -50,7 +50,69 @@
 
           <h1>Søg pæ jeres drømmesommerhus</h1>
 
-          <p>Find det nor:house der passer til netop jeres behov</p>
+          <p class="search_content_text">Find det nor:house der passer til netop jeres behov</p>
+
+          <div class="search_content_calculator">
+
+            <div class="search_content_calculator_drop">
+              <h5>Antal sovepladser</h5>
+              <p>Vælg pladser</p>
+              <img src="img/search/arrow.svg" alt="">
+              <div class="search_content_calculator_drop_choice">
+                <label for="">
+                  <input value="10" type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Min. 10</span>
+                </label>
+                <label for="">
+                  <input value="8" type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Min. 8</span>
+                </label>
+                <label for="">
+                  <input value="6" type="checkbox">
+                  <span class="checkmark"></span>
+                  <span class="text">Min. 6</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="search_content_calculator_space">
+
+              <div class="search_content_calculator_space_title">
+                <h5>Boligareal</h5>
+              </div>
+
+              <span class="search_content_calculator_space_min">150m²</span>
+              <div class="search_content_calculator_space_bar">
+                <div class="search_content_calculator_space_bar_left"></div>
+                <input id="spaceRange" type="range" min="6" max="300" step="1">
+                <div class="search_content_calculator_space_bar_right"></div>
+              </div>
+              <span class="search_content_calculator_space_max">300m²</span>
+
+            </div>
+
+            <div class="search_content_calculator_price">
+
+              <div class="search_content_calculator_price_title">
+                <h5>Pris</h5>
+              </div>
+
+              <span class="search_content_calculator_price_min">DKK 2685000</span>
+              <div class="search_content_calculator_price_bar">
+                <div class="search_content_calculator_price_bar_left"></div>
+                <input id="priceRange" type="range" value="2685000" min="100000" max="5370000" step="5000">
+                <div class="search_content_calculator_price_bar_right"></div>
+              </div>
+              <span class="search_content_calculator_price_max">DKK 5370000</span>
+
+            </div>
+
+            <div class="search_content_calculator_search">
+              SØG
+            </div>
+          </div>
 
           <div class="search_content_bottom">
             <div class="search_content_bottom_links">
@@ -278,6 +340,143 @@
             </div>
 
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="container">
+        <div class="catalog_content">
+
+          <div data-san="6" data-square="270" data-price="3000000" class="catalog_content_item">
+
+            <div class="catalog_content_item_slider">
+              <div class="catalog_content_item_slider_list">
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="catalog_content_item_text">
+              <h3 class="catalog_content_item_text_title">Lorem ipsum</h3>
+              <p class="catalog_content_item_text_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam</p>
+              <div class="catalog_content_item_text_list">
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bebygget Areal</span>
+                  <p>125 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bolig Areal</span>
+                  <p>120 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Sovepladser</span>
+                  <p>6 pers.</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Vejledende pris*</span>
+                  <p>2.X00.000 DKK</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div data-san="8" data-square="210" data-price="2500000" class="catalog_content_item">
+
+            <div class="catalog_content_item_slider">
+              <div class="catalog_content_item_slider_list">
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="catalog_content_item_text">
+              <h3 class="catalog_content_item_text_title">Lorem ipsum</h3>
+              <p class="catalog_content_item_text_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam</p>
+              <div class="catalog_content_item_text_list">
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bebygget Areal</span>
+                  <p>125 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bolig Areal</span>
+                  <p>120 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Sovepladser</span>
+                  <p>6 pers.</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Vejledende pris*</span>
+                  <p>2.X00.000 DKK</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div data-san="10" data-square="180" data-price="1000000" class="catalog_content_item">
+
+            <div class="catalog_content_item_slider">
+              <div class="catalog_content_item_slider_list">
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+                <div class="catalog_content_item_slider_list_img">
+                  <img src="img/search/catalog.jpg" alt="">
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="catalog_content_item_text">
+              <h3 class="catalog_content_item_text_title">Lorem ipsum</h3>
+              <p class="catalog_content_item_text_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam</p>
+              <div class="catalog_content_item_text_list">
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bebygget Areal</span>
+                  <p>125 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Bolig Areal</span>
+                  <p>120 m2</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Sovepladser</span>
+                  <p>6 pers.</p>
+                </div>
+                <div class="catalog_content_item_text_list_item">
+                  <span>Vejledende pris*</span>
+                  <p>2.X00.000 DKK</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>

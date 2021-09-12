@@ -461,4 +461,63 @@ $(document).ready(function () {
         $(".find_desktop_content_main_bar_line_tool_sticks").css("width", widthPercent);
     });
 
+    $(".catalog_content_item .catalog_content_item_slider_list").each(function() {
+        if($(this).children().length > 1) {
+            $(this).slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                prevArrow: '<div class="catalog_content_item_slider_prev"><img src="img/search/arrow_prev.svg" alt=""></div>',
+	            nextArrow: '<div class="catalog_content_item_slider_next"><img src="img/search/arrow_next.svg" alt=""></div>'
+            });
+        }
+    });
+
+    
+    document.querySelectorAll(".search_content_calculator_space input").forEach(function(el) {       
+        el.oninput = function() {            
+        var valPercent = (el.valueAsNumber  - parseInt(el.min)) / 
+                            (parseInt(el.max) - parseInt(el.min));
+          var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop('+ valPercent+', #CBA689), color-stop('+ valPercent+', transparent));';
+          el.style = style;
+        };
+        el.oninput();
+    });
+
+
+    document.querySelectorAll(".search_content_calculator_price input").forEach(function(el) {       
+        el.oninput = function() {            
+        var valPercent = (el.valueAsNumber  - parseInt(el.min)) / 
+                            (parseInt(el.max) - parseInt(el.min));
+          var style = 'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop('+ valPercent+', #CBA689), color-stop('+ valPercent+', transparent));';
+          el.style = style;
+        };
+        el.oninput();
+    });
+
+    $(".search_content_calculator_drop").click(function() {
+        $(this).toggleClass("active");
+    });
+
+    $(".search_content_calculator_drop_choice input").click(function() {
+        $(".search_content_calculator_drop_choice input").prop('checked', false);
+        $(this).prop('checked', true);
+        var valText = $(this).siblings(".text").text();
+        $(".search_content_calculator_drop p").text(valText);
+    });
+
+    $('#spaceRange').on('input', function() {
+        var inputVal = $(this).val();
+        $(".search_content_calculator_space_min").text(inputVal + 'm²');
+    });
+
+
+    $('#priceRange').on('input', function() {
+        var inputVal = $(this).val();
+        $(".search_content_calculator_price_min").text('DKK ' + inputVal);
+    });
+
+    
+
 });

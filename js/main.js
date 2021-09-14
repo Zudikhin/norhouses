@@ -115,12 +115,16 @@ $(document).ready(function () {
 
     $(".edit_item_wood button").click(function() {
         $(".edit").addClass("active");
+        $(this).parent().addClass("active");
+        $(".edit_item_window").removeClass("active");
         $(".edit_choice_wood").addClass("active");
         $(".edit_choice_window").removeClass("active");
     });
 
     $(".edit_item_window button").click(function() {
         $(".edit").addClass("active");
+        $(this).parent().addClass("active");
+        $(".edit_item_wood").removeClass("active");
         $(".edit_choice_window").addClass("active");
         $(".edit_choice_wood").removeClass("active");
     });
@@ -152,6 +156,7 @@ $(document).ready(function () {
         }
         $(".edit_choice_wood").removeClass("active");
         $(".edit").removeClass("active");
+        $(".edit_item").removeClass("active");
     });
 
 
@@ -182,6 +187,7 @@ $(document).ready(function () {
         }
         $(".edit_choice_window").removeClass("active");
         $(".edit").removeClass("active");
+        $(".edit_item").removeClass("active");
     });
 
     $('.come_slider').slick({
@@ -518,6 +524,62 @@ $(document).ready(function () {
         $(".search_content_calculator_price_min").text('DKK ' + inputVal);
     });
 
-    
+    $(".search_content_calculator_space_bar_left").click(function() {
+        var valueRange = $("#spaceRange").val();
+        var valueRange = parseInt(valueRange);
+        var result = valueRange - 1;
+        if(result <= 6) {
+            $("#spaceRange").val(6);
+            $(".search_content_calculator_space_min").text('6m²');
+        } else {
+            $("#spaceRange").val(result);
+            $(".search_content_calculator_space_min").text(result + 'm²');
+        }
+    });
+
+
+    $(".search_content_calculator_space_bar_right").click(function() {
+        var valueRange = $("#spaceRange").val();
+        var valueRange = parseInt(valueRange);
+        var result = valueRange + 1;
+        if(result >= 300) {
+            $("#spaceRange").val(300);
+            $(".search_content_calculator_space_min").text('300m²');
+        } else {
+            $("#spaceRange").val(result);
+            $(".search_content_calculator_space_min").text(result + 'm²');
+        }
+    });
+
+
+
+
+    $(".search_content_calculator_price_bar_left").click(function() {
+        var valueRange = $("#priceRange").val();
+        var valueRange = parseInt(valueRange);
+        console.log(valueRange);
+        var result = valueRange - 5000;
+        if(result <= 100000) {
+            $("#priceRange").val(100000);
+            $(".search_content_calculator_price_min").text('DKK 100000');
+        } else {
+            $("#priceRange").val(result);
+            $(".search_content_calculator_price_min").text('DKK' + ' ' + result);
+        }
+    });
+
+
+    $(".search_content_calculator_price_bar_right").click(function() {
+        var valueRange = $("#priceRange").val();
+        var valueRange = parseInt(valueRange);
+        var result = valueRange + 5000;
+        if(result >= 5370000) {
+            $("#priceRange").val(5370000);
+            $(".search_content_calculator_price_min").text('DKK 5370000');
+        } else {
+            $("#priceRange").val(result);
+            $(".search_content_calculator_price_min").text('DKK' + ' ' + result);
+        }
+    });
 
 });
